@@ -37,9 +37,18 @@ public class GridPanel extends JPanel{
 		
 		//2. Initialize the pixel array using the rows and cols variables.
 		
+		pix = new Pixel [rows] [cols];
+		
 		
 		//3. Iterate through the array and initialize each element to a new pixel.
 		
+		for (int i = 0; i < pix.length; i++) {
+			for (int j = 0; j < pix[i].length; j++) {
+				
+				pix[i][j] = new Pixel();
+				
+			}
+		}
 		
 	}
 	
@@ -57,6 +66,8 @@ public class GridPanel extends JPanel{
 		//4. Iterate through the array.
 		//   For every pixel in the list, fill in a rectangle using the pixel's color.
 		//   Then, use drawRect to add a grid pattern to your display.
+		
+		
 		
 	}
 }
