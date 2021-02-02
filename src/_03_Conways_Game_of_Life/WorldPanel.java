@@ -31,11 +31,23 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 	
 		//2. Calculate the cell size.
 		
+		cellSize = WIDTH/cellsPerRow;
+		
 		//3. Initialize the cell array to the appropriate size.
+		
+		c = new Cell [cellSize] [cellSize];
 		
 		//3. Iterate through the array and initialize each cell.
 		//   Don't forget to consider the cell's dimensions when 
 		//   passing in the location.
+		
+		for (int i = 0; i < c.length; i++) {
+			
+			for (int j = 0; j < c[i].length; j++) {
+				c[i][j] = new Cell (i, j, cellSize);
+			}
+			
+		}
 		
 	}
 	
