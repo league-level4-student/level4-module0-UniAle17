@@ -236,7 +236,7 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 		//    the isAlive variable for that cell.
 		
 		
-		c[e.getX()/cellSize][e.getX()/cellSize]
+		c[e.getX()/cellSize][e.getX()/cellSize].isAlive = !c[e.getX()/cellSize][e.getX()/cellSize].isAlive;
 		
 		
 		repaint();
