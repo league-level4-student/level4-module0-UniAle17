@@ -42,7 +42,7 @@ public class Maze {
 		
 			for (int j = 0; j < cells[i].length; j++) {
 				
-				g.drawRect(x, y, i, i);
+				cells[i][j].draw(g);
 				
 			}
 			
