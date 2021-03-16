@@ -57,7 +57,7 @@ public class Maze {
 		
 		
 		
-		return  null;
+		return  cells[x][y];
 	}
 
 	public int getWidth() {

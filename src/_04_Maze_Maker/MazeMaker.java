@@ -33,6 +33,8 @@ public class MazeMaker{
 	//6. Complete the selectNextPathMethod
 	private static void selectNextPath(Cell currentCell) {
 		//A. mark cell as visited
+		
+		
 
 		//B. Get an ArrayList of unvisited neighbors using the current cell and the method below
 		
