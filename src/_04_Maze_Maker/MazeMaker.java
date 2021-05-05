@@ -42,22 +42,35 @@ public class MazeMaker{
 		
 		//C. if has unvisited neighbors,
 			
-			if(unvisitedNeighs > 0){
+			if(unvisitedNeighs.size() > 0){
 				
 			
 		
 			//C1. select one at random.
 				
-				Random ran = new Random();
-			
+				int r = randGen.nextInt();
+				
 			//C2. push it to the stack
-		
+				
+			Cell ran =	unvisitedNeighs.get(r);
+	
+			uncheckedCells.push(ran);
+			
+			
 			//C3. remove the wall between the two cells
+			
+			removeWalls(ran, currentCell);
 
 			//C4. make the new cell the current cell and mark it as visited
 		
+			currentCell = ran;
+			
+			currentCell.setBeenVisited(true);
+			
 			//C5. call the selectNextPath method with the current cell
-				
+			
+			currentCell.selectNextPath();
+			
 			
 			}
 		//D. if all neighbors are visited
