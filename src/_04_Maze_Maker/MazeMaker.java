@@ -75,6 +75,15 @@ public class MazeMaker{
 			}
 		//D. if all neighbors are visited
 		
+			if(unvisitedNeighs.size() == 0) {
+				
+				if(uncheked0Cells.size() > 0) {
+					
+					
+				}
+				
+			}
+			
 			//D1. if the stack is not empty
 			
 				// D1a. pop a cell from the stack
