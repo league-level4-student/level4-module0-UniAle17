@@ -69,7 +69,7 @@ public class MazeMaker{
 			
 			//C5. call the selectNextPath method with the current cell
 			
-			currentCell.selectNextPath();
+			selectNextPath(currentCell);
 			
 			
 			}
@@ -77,8 +77,13 @@ public class MazeMaker{
 		
 			if(unvisitedNeighs.size() == 0) {
 				
-				if(uncheked0Cells.size() > 0) {
+				if(uncheckedCells.size() > 0) {
 					
+					Cell poppedCell = uncheckedCells.pop();
+					
+					currentCell = poppedCell;
+					
+					selectNextPath(currentCell);
 					
 				}
 				
@@ -100,6 +105,8 @@ public class MazeMaker{
 	//   This method will check if c1 and c2 are adjacent.
 	//   If they are, the walls between them are removed.
 	private static void removeWalls(Cell c1, Cell c2) {
+		
+		
 		
 	}
 	
