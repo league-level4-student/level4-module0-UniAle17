@@ -105,9 +105,36 @@ public class MazeMaker{
 	//   This method will check if c1 and c2 are adjacent.
 	//   If they are, the walls between them are removed.
 	private static void removeWalls(Cell c1, Cell c2) {
+		if(c1.getX() == c2.getX()) {
+			if(c1.getY() > c2.getY()) {
+				c1.setNorthWall(false);
+				c2.setSouthWall(false);
+			}
+			
+			else {
+				
+				c1.setNorthWall(true);
+				c2.setSouthWall(true);
+				
+			}
+		}
 		
+		else {
+			
+			if(c1.getX() > c2.getX()) {
+				c1.setWestWall(false);
+				c2.setEastWall(false);
+			}
+			
+		}
 		
-		
+		else { 
+			
+			
+			
+		}
+			
+	
 	}
 	
 	//8. Complete the getUnvisitedNeighbors method
