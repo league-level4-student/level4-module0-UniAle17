@@ -126,21 +126,32 @@ public class MazeMaker{
 				c2.setEastWall(false);
 			}
 			
-		}
+		
 		
 		else { 
 			
-			
+			c1.setWestWall(true);
+			c2.setEastWall(true);
 			
 		}
 			
-	
+		}
 	}
 	
 	//8. Complete the getUnvisitedNeighbors method
 	//   Any unvisited neighbor of the passed in cell gets added
 	//   to the ArrayList
 	private static ArrayList<Cell> getUnvisitedNeighbors(Cell c) {
+		
+		
+		
+		if(unvisitedNeighs) {
+			
+		}
+		
+		
 		return null;
+		
+		
 	}
 }
