@@ -142,15 +142,67 @@ public class MazeMaker{
 	//   Any unvisited neighbor of the passed in cell gets added
 	//   to the ArrayList
 	private static ArrayList<Cell> getUnvisitedNeighbors(Cell c) {
+	
+		ArrayList<Cell> unvisited = new ArrayList<Cell>();
 		
+		Cell left;
 		
+		if(c.getX() > 0) {
+			left = maze.getCell(c.getX() - 1, c.getY());
+			
+			if(left.hasBeenVisited()==true) {
+				
+				unvisited.add(left);
+				
+			}
+			
+		}
 		
-		if(unvisitedNeighs) {
+		Cell right;
+		
+		if(c.getX() < width) {
+		
+		right = maze.getCell(c.getX()+1, c.getY());
+		
+		if(right.hasBeenVisited()==true) {
+			
+			unvisited.add(right);
+			
+			}
+		
+		}
+		
+		Cell up;
+		
+		if(c.getY()>0) {
+		
+			up = maze.getCell(c.getX(), c.getY()-1);
+			
+			if(up.hasBeenVisited()==true) {
+				
+				unvisited.add(up);
+				
+			}
 			
 		}
 		
 		
-		return null;
+		Cell down;
+		
+		if(c.getY() < height) {
+		
+		down = maze.getCell(c.getX(), c.getY()+1);
+		
+		if(down.hasBeenVisited()==true) {
+			
+			unvisited.add(down);
+			
+		}
+		
+		}
+		
+		
+		return unvisited;
 		
 		
 	}
