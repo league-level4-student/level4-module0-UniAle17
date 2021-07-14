@@ -16,7 +16,6 @@ public class MazeDisplay extends JPanel{
 	private Maze maze;
 	
 	MazeDisplay(){
-		super();
 		this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 		
 		window = new JFrame();

@@ -1,5 +1,6 @@
 package _04_Maze_Maker;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Stack;
@@ -23,8 +24,21 @@ public class MazeMaker{
 		
 		//4. select a random cell to start
 		
+		Random ran = new Random();
+		
+		
+		
+		Cell c = maze.cells[randGen.nextInt(maze.cells.length)][randGen.nextInt(maze.cells.length)];
 		
 		//5. call selectNextPath method with the randomly selected cell
+		
+		
+		selectNextPath(c);
+		
+		Cell b = maze.cells[randGen.nextInt(maze.cells.length)][randGen.nextInt(maze.cells.length)];
+		b.set
+		
+		
 		
 		
 		return maze;
@@ -39,7 +53,7 @@ public class MazeMaker{
 		//B. Get an ArrayList of unvisited neighbors using the current cell and the method below
 		
 			ArrayList <Cell> unvisitedNeighs = getUnvisitedNeighbors(currentCell);
-		
+			
 		//C. if has unvisited neighbors,
 			
 			if(unvisitedNeighs.size() > 0){
@@ -48,7 +62,7 @@ public class MazeMaker{
 		
 			//C1. select one at random.
 				
-				int r = randGen.nextInt();
+				int r = randGen.nextInt(unvisitedNeighs.size());
 				
 			//C2. push it to the stack
 				
@@ -113,8 +127,8 @@ public class MazeMaker{
 			
 			else {
 				
-				c1.setNorthWall(true);
-				c2.setSouthWall(true);
+				c2.setNorthWall(false);
+				c1.setSouthWall(false);
 				
 			}
 		}
@@ -130,8 +144,9 @@ public class MazeMaker{
 		
 		else { 
 			
-			c1.setWestWall(true);
-			c2.setEastWall(true);
+			c2.setWestWall(false);
+			c1.setEastWall(false);
+			
 			
 		}
 			
@@ -150,7 +165,7 @@ public class MazeMaker{
 		if(c.getX() > 0) {
 			left = maze.getCell(c.getX() - 1, c.getY());
 			
-			if(left.hasBeenVisited()==true) {
+			if(left.hasBeenVisited()==false) {
 				
 				unvisited.add(left);
 				
@@ -160,11 +175,11 @@ public class MazeMaker{
 		
 		Cell right;
 		
-		if(c.getX() < width) {
+		if(c.getX() < width - 1) {
 		
 		right = maze.getCell(c.getX()+1, c.getY());
 		
-		if(right.hasBeenVisited()==true) {
+		if(right.hasBeenVisited()==false) {
 			
 			unvisited.add(right);
 			
@@ -178,7 +193,7 @@ public class MazeMaker{
 		
 			up = maze.getCell(c.getX(), c.getY()-1);
 			
-			if(up.hasBeenVisited()==true) {
+			if(up.hasBeenVisited()==false) {
 				
 				unvisited.add(up);
 				
@@ -189,11 +204,11 @@ public class MazeMaker{
 		
 		Cell down;
 		
-		if(c.getY() < height) {
+		if(c.getY() < height-1) {
 		
 		down = maze.getCell(c.getX(), c.getY()+1);
 		
-		if(down.hasBeenVisited()==true) {
+		if(down.hasBeenVisited()==false) {
 			
 			unvisited.add(down);
 			
